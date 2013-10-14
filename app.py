@@ -6,6 +6,10 @@ import json
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
+@app.route('/')
+def index():
+  return render_template('index.html')
+
 @app.route('/socket.io/<path:rest>')
 def push_stream(rest):
     try:
