@@ -1,0 +1,16 @@
+<html>
+<head>
+<script src="/static/js/socket.io.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  var socket = io.connect('http://localhost:8080');
+  socket.on('chat', function (data) {
+    console.log(data);
+    socket.emit('chat', { my: 'data' });
+  });
+});
+</script>
+</head>
+</html>
